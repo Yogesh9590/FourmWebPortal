@@ -1,0 +1,11 @@
+{
+	"credentials" : {
+		"username" : "yogeshmane",
+		"password" : "xxx"
+	},
+	"parameters" : {
+		"from" : "xxx@xxx.com",
+		"subject" : "Welcome To XXX"
+	} 
+
+}
