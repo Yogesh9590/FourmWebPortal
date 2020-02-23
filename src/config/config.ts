@@ -5,17 +5,17 @@ process.env.SESSION_SECRET = "ashdfjhasdlkjfhalksdjhflak";
 process.env.JWT_SECRET = "PrAcHi@ThE@BeAuTy@QuEeN";
 
 const dev = {
- 	mongoURI: 'mongodb://localhost:27017/NuvoDB',
+ 	mongoURI: 'mongodb://localhost:27017/FourmDB',
  	loglevel: "debug",
 };
 
 const qa = {
- 	mongoURI: 'mongodb://localhost:27017/NuvoDB',
+ 	mongoURI: 'mongodb://localhost:27017/FourmDB',
  	loglevel: "debug",
 };
 
 const prod = {
- 	mongoURI: 'mongodb://13.59.81.45:27017/NuvoDB',
+ 	mongoURI: 'mongodb://13.59.81.45:27017/FourmDB',
  	loglevel: "info",
 };
 
