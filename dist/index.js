@@ -3,7 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const mongo = require("connect-mongo");
 const logger = require("morgan");
+const mongoose = require("mongoose");
 const flash = require("express-flash");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
@@ -14,14 +16,14 @@ const JSONRes = require("./services/response-service");
 const authController = require("./controllers/auth");
 const env = require('./config/env');
 const config = require('./config/config');
-// const MongoStore = mongo(session);
+const MongoStore = mongo(session);
 const app = express();
 //Connect to MongoDB.
-// mongoose.connect(config.mongoURI,{ useMongoClient: true });
-// mongoose.connection.on("error", () => {
-//   console.log("MongoDB connection error. Please make sure MongoDB is running.");
-//   process.exit();
-// });
+mongoose.connect(config.mongoURI, { useMongoClient: true });
+mongoose.connection.on("error", () => {
+    console.log("MongoDB connection error. Please make sure MongoDB is running.");
+    process.exit();
+});
 // enable cors
 var corsOption = {
     origin: true,
@@ -38,6 +40,10 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET,
+    store: new MongoStore({
+        url: config.mongoURI,
+        autoReconnect: true
+    })
 }));
 app.use(flash());
 // get an instance of the router for api routes

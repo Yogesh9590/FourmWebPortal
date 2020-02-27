@@ -19,16 +19,16 @@ import * as authController from "./controllers/auth";
 const env = require('./config/env');
 const config = require('./config/config');
 
-// const MongoStore = mongo(session);
+const MongoStore = mongo(session);
 const app = express();
 
 //Connect to MongoDB.
-// mongoose.connect(config.mongoURI,{ useMongoClient: true });
+mongoose.connect(config.mongoURI,{ useMongoClient: true });
 
-// mongoose.connection.on("error", () => {
-//   console.log("MongoDB connection error. Please make sure MongoDB is running.");
-//   process.exit();
-// });
+mongoose.connection.on("error", () => {
+  console.log("MongoDB connection error. Please make sure MongoDB is running.");
+  process.exit();
+});
 
 // enable cors
 var corsOption = {
@@ -47,10 +47,10 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   secret: process.env.SESSION_SECRET,
-  // store: new MongoStore({
-  //   url: config.mongoURI,
-  //   autoReconnect: true
-  // })
+  store: new MongoStore({
+    url: config.mongoURI,
+    autoReconnect: true
+  })
 }));
 app.use(flash());
 
