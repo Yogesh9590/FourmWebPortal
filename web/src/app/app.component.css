@@ -1,0 +1,292 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 1260px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+
+  /* .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  } */
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(black, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+
+.logo-font{ font-size: 22px; }
+.outer-section{ padding: 10px 20px; }
+.wrapper{ background-color: #fff; padding: 20px; }
+
+.card-header{ border-bottom: none; background-color: #fff; padding: .75rem 0; }
+.card{ border: none; border-bottom: 1px solid #ccc; }
+
+.name-initials{ 
+    background: #2076d2;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+}
+.btn-link{ text-align: left; color: #000; }
+.btn-link.focus, .btn-link:focus {
+    text-decoration: none;
+    box-shadow: none;
+}
+.btn-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+.blog-list{ padding: 15px 0px; }
+.blog-info{     font-size: small;
+    color: #000000a6; }
+.mb-0{ position: relative; }
+.view-info{ position: absolute; top: 18px; right: 0px; font-size: 15px; }
+.view-info .views{ padding: 0px 15px; }
+.view-info .views i{ padding: 0px 5px; color: #28a745; font-size: 16px; }
+.view-info .comments i{ padding: 0px 5px; color: #2076d2; font-size: 16px; }
+.user-initials{ 
+    background: #2076d2;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    line-height: 34px;
+    margin-right: 4px; 
+}
+.cell-con-mar{ margin-left: 40px; }
+.cell-mar{ margin-left: 16px; }
+.cell-border{ border-left: 1px solid #2076d2; }
+.cell-inner-pad{ padding: 10px 10px 35px 16px;}
+.edit{ 
+    padding: 0px 2px 0px 15px;
+    font-size: 16px;
+    color: blue;
+    cursor: pointer;
+}
+.edit:hover{ font-size: 20px; }
+.delete{ 
+    padding: 0px 10px;
+    font-size: 16px;
+    color: red;
+    cursor: pointer;
+}
+.delete:hover{ font-size: 20px; }
+.like{ font-size: 16px; color: #007bff; cursor: pointer; margin-right: 20px; }
+.dislike{ font-size: 16px; color: #007bff; cursor: pointer; }
+.like i{ margin-right: 5px; }
+.dislike i{ margin-right: 5px; }
+.like-dislike-mar{ margin-top: 10px; }
+.add-comment-btn{
+    background: #2076d2;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 2px 15px 2px 10px;
+}
+.add-comment-btn:focus{ outline: none; }
+.add-comment-btn .icon{ font-size: 20px;
+    padding: 0px 8px 0px 0px;
+    border-right: 1px solid #fff; }
+.add-comment-btn .btn-txt{ padding: 0px 0px 0px 8px;
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: text-bottom; }  
+.categories-sec{     margin: 10px 0px;
+    font-size: 15px;
+cursor: pointer; }  
+.outer-wrapper{     background-color: #eeeeee;
+    margin-bottom: 30px; }
+.member-sec{ margin: 10px 0px; }  
+.fourm-logo{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    color: #2076d2;
+    font-size: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin: 0px 10px 0px 15px;
+}  
+.log-out{
+    margin: 0px 25px 0px 10px;
+    font-size: 16px;
+    padding: 4px 12px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+.log-in{
+    margin: 0px 10px;
+    font-size: 16px;
+    padding: 4px 12px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+.log-up{
+    margin: 0px 10px;
+    font-size: 16px;
+    padding: 4px 12px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+.log-out i{ margin-right: 8px; }
+.log-in i{ margin-right: 8px; }
+.log-up i{ margin-right: 8px; }
+textarea{ resize: none; height: 150px; }
